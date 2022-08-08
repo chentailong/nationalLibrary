@@ -8,4 +8,4 @@ app.use(express.urlencoded({extended: true}))
 
 //引用自定义路由
 let loginRouter = require('./router/user');
-app.use('/user',loginRouter);
+app.use('/library/user',loginRouter);
