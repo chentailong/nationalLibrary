@@ -5,6 +5,7 @@ let router = express.Router();
 
 module.exports = router
 
+//查询用户名是否已经注册
 router.get('/check_name', (req, res) => {
     // http://127.0.0.1:9000/library/user/check_name?uname=ctl
     var sql = 'select * from l_user where uname=?';
@@ -20,3 +21,26 @@ router.get('/check_name', (req, res) => {
         }
     })
 })
+
+//注册用户
+router.get('/register', (req, res) => {
+    let sql = 'insert into l_user values(?),[req.query]'
+})
+
+
+//实现用户登录
+router.get('/login', (req, res) => {
+    let user = req.query.uname
+    let pwd = req.query.upwd
+    let sql = 'select * from l_user where uname=? and upwd=?';
+    pool.query(sql, [user, pwd], (error, request) => {
+        if (error) throw error
+        console.log(request)
+        if (request.length === 0) {
+            res.send("登录失败")
+        } else {
+            res.send("登录成功")
+        }
+    })
+})
+
