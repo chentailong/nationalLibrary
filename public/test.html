@@ -6,25 +6,25 @@
 </head>
 <body>
 <div id="test">
+	<img src="" alt="" id="img" style="width: 100px ;height: 100px;">
+</div>
+<script>
 
+    const xhr = new XMLHttpRequest();
+    const url = '/library/art/article'
 
-	<script>
+    //2.打开服务器连接
+    xhr.open('GET', url)
+    //3.提前准备响应消息后的操作
+    xhr.onload = function () {
+        // console.log(xhr.responseText)
+        let json = JSON.parse(xhr.responseText);
+        console.log(json.data)
+        document.getElementById('img').src = `${json.data[0].timg}`
+    }
+    xhr.send()
 
-        const xhr = new XMLHttpRequest();
-        const url = 'http://localhost:9000/user/login'
-
-        //2.打开服务器连接
-        xhr.open('GET', url)
-        //3.提前准备响应消息后的操作
-        xhr.onload = function () {
-            // console.log(xhr.responseText)
-            var json = JSON.parse(xhr.responseText);
-            console.log(json.data)
-            test.innerHTML = json.data[0].tcont
-        }
-        xhr.send()
-
-	</script>
+</script>
 </div>
 </body>
 </html>

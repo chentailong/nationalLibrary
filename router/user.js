@@ -23,12 +23,24 @@ router.get('/check_name', (req, res) => {
 })
 
 //注册用户
-router.get('/register', (req, res) => {
-    let sql = 'insert into l_user values(?),[req.query]'
+//get /register
+//接口名称http://127.0.0.1:9000/library/user/reg
+router.get('/reg', (req, res) => {
+    console.log(req.query)
+    let sql = 'insert into l_user set ?';
+    pool.query(sql, [req.query], (error, result) => {
+        if (error) throw error
+        if (result.affectedRows !== 0) {
+            console.log("注册成功")
+        } else {
+            console.log("注册失败")
+        }
+    })
 })
 
 
 //实现用户登录
+//接口名称http://127.0.0.1:9000/library/user/login
 router.get('/login', (req, res) => {
     let user = req.query.uname
     let pwd = req.query.upwd

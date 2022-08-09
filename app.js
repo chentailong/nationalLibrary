@@ -8,4 +8,6 @@ app.use(express.urlencoded({extended: true}))
 
 //引用自定义路由
 let loginRouter = require('./router/user');
-app.use('/library/user',loginRouter);
+app.use('/library/user', loginRouter);
+let art = require('./router/article');
+app.use('/library/art', art);

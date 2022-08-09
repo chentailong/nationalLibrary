@@ -5,7 +5,7 @@ let pool = mysql.createPool({
     port: '3307',
     user: 'root',
     password: '',
-    database: 'library',
+    database: 'librarys',
     connectionLimit: 15
 });
 //暴露连接池对象
