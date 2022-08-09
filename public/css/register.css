@@ -1,14 +1,17 @@
-body{
-    background-size: 100% 100% ;
-    background: url(../images/index/login_bg.png) no-repeat fixed;
+body {
+    background-size: 100% 100%;
+    background: url(../img/index/login_bg.png) no-repeat fixed;
 }
-html{
+
+html {
     background: none;
 }
-#register{
+
+#register {
     width: 970px;
     margin: 0 auto;
 }
+
 .content {
     position: absolute;
     top: 40%;
@@ -18,25 +21,28 @@ html{
     height: 623px;
     margin-top: -278px;
     margin-left: -262px;
-    background: hsla(0,0%,100%,.4);
+    background: hsla(0, 0%, 100%, .4);
     border-radius: 11px;
     border: 1px solid #fff;
     padding: 0 78px;
 }
-.cont_top{
+
+.cont_top {
     padding-top: 30px;
     color: #333;
     font-size: 20px;
     letter-spacing: 2px;
     text-align: center;
 }
-.content img{
+
+.content img {
     width: 220px;
     height: 66px;
     vertical-align: middle;
     margin: 0 auto;
 }
-.login_text{
+
+.login_text {
     margin-top: 26px;
     height: 40px;
     box-sizing: border-box;
@@ -45,48 +51,61 @@ html{
     list-style: none;
     font-weight: bold;
 }
-.login_text>a{
+
+.login_text > a {
     font-size: 18px;
     color: #303133;
 }
-.login_text>a:hover{
-    color: #3aaa75;
+
+.login_text > a:hover {
+    color: #3aaa75 !important;
 }
-.user_pwd{
+
+.user_pwd {
     color: #333;
     font-size: 16px;
     width: 360px;
     height: 52px;
     padding-left: 5px;
-    background-image: none;
     border-radius: 4px;
     border: 1px solid #dcdfe6;
     box-sizing: border-box;
-    color: rgba(50,50,50,.3);
+    color: rgba(50, 50, 50, .3);
     display: block;
     line-height: 52px;
     font-family: "微软雅黑";
-    background: rgba(255,255,255,.8 );
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, .8) none;
+    margin-top: 20px;
 }
-.users{
+
+.log {
+    color: #999999 !important;
+}
+
+.users {
     margin-top: 10px !important;
 }
-.subt{
+
+.sub {
     width: 360px;
     height: 52px;
     background-color: #3aaa75;
-    border-color: #3aaa75;
     border-radius: 6px;
     font-size: 18px !important;
     letter-spacing: 2px;
     transition: .7s;
     margin-bottom: 13px;
-    border: 1px solid;
+    border: 1px solid #3aaa75;
     outline: 0;
     color: #fff;
     cursor: pointer;
+    margin-top: 20px;
 }
-form span>a{
+
+span > a {
     color: #3aaa75;
+}
+
+#unameMsg {
+    color: red;
 }

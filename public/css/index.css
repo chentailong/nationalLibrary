@@ -179,6 +179,7 @@
 
 .bookItem {
     margin-bottom: 50px;
+    margin-right: 80px;
     cursor: pointer;
 }
 
@@ -196,6 +197,7 @@
     color: #09172f;
     font-weight: 600;
     overflow: hidden;
+    text-align: center;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -258,6 +260,7 @@
     font-size: 22px;
     color: #09172f;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .yearNum {
@@ -273,13 +276,13 @@
     margin-bottom: 16px;
 }
 
-.articleCoverConteiner {
+.articleCoverContainer {
     margin-bottom: 11px;
     overflow: hidden;
 }
 
 .articleCover,
-.articleCoverConteiner {
+.articleCoverContainer {
     width: 204px;
     height: 72.5px;
 }

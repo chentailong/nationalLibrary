@@ -35,3 +35,17 @@ router.get('/art_detail', (req, res) => {
         }
     })
 })
+
+//查询四条文章数据，用于首页显示
+//get /indexArticle
+//http://127.0.0.1:9000:library/art/indexArticle
+router.get('/indexArticle', (req, res) => {
+    pool.query('select * from l_article LIMIT 4', (error, result) => {
+        if (error) throw error
+        if (result) {
+            res.send({code: 200, data: result})
+        } else {
+            res.send({code: 404, data: '没有数据'})
+        }
+    })
+})

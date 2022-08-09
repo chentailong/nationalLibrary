@@ -12,38 +12,39 @@
 <div id="register">
 	<div class="content">
 		<div class="cont_top">
-			<img src="images/index/login_logo.png" alt="">
+			<img src="img/index/login_logo.png" alt="">
 			<p class="img_text">拥有主宰自己的力量</p>
 		</div>
-
-		<p class="login_text">用户注册</p>
-		<form action="" method="get">
-			<input type="text" name="user_name" id="uname" class="users user_pwd" placeholder="请输入用户名" required>
-			<span id="unameMsg"></span>
-			<input type="password" name="user_pwd" class="pwds user_pwd" placeholder="请输入密码" required>
-			<span id="pwdMsg"></span>
-			<input type="password" name="user_pwd" class="pwds2 user_pwd" placeholder="请确认密码" required>
-			<span id="pwd2Msg"></span>
-			<input type="email" name="email" id="email" class="user_pwd" placeholder="请输入邮箱" required>
-			<span id="emailMsg"></span>
-			<!-- <input type="tel" name="phone" id="phone" class="user_pwd" placeholder="请输入手机号码" required> -->
-			<input type="submit" name="" class="subt" value="注册">
-			<input type="checkbox" name="" value="" required checked>
-			<span>我已同意
+		<p class="login_text"><a href="login.html" class="log">用户登录</a> &nbsp; <a href="#">用户注册</a></p>
+		<input type="text" name="user_name" id="uname" class="users user_pwd" placeholder="请输入用户名" required>
+		<span id="unameMsg"></span>
+		<input type="password" id="upwd1" class="pwds user_pwd" placeholder="请输入密码" required>
+		<span id="pwdMsg"></span>
+		<input type="password" id="upwd2" class="pwds2 user_pwd" placeholder="请确认密码" required>
+		<span id="pwd2Msg"></span>
+		<input type="email" name="email" id="email" class="user_pwd" placeholder="请输入邮箱" required>
+		<span id="emailMsg"></span>
+		<input type="submit" class="sub" value="注册" onclick="show()">
+		<input type="checkbox" value="" required onclick="onCheck(this)">
+		<span>我已同意
                     <a href="#" class="nth_2">《藏书馆服务协议》</a> 及
                     <a href="#" class="nth_2">《用户隐私政策》</a>
                 </span>
-		</form>
 	</div>
 </div>
 
 <script>
+    let check = false;
 
-    uname.onblur = function () {
+    function onCheck(e) {
+        check = e.checked
+    }
+
+    //检测用户是否存在
+    uname.onblur = function fun() {
         //获取用户的输入名
-        var n = uname.value
-        var url = 'http://127.0.0.1:9000/library/user/check_name?uname=' + n
-        console.log(url)
+        var name = uname.value
+        var url = '/library/user/check_name?uname=' + name
         //AJAX四步骤
         //1.创建Ajax异步请求对象
         var xhr = new XMLHttpRequest()
@@ -51,7 +52,6 @@
         xhr.open('GET', url)
         //3.提前准备响应消息后的操作
         xhr.onload = function () {
-            console.log(xhr.responseText)
             if (xhr.responseText === 'exists') {
                 unameMsg.innerHTML = "该用户已存在"
                 document.getElementById('unameMsg').style.display = 'block'
@@ -61,6 +61,40 @@
         }
         //4.给服务器发送请求
         xhr.send()
+    }
+
+    function show() {
+        let name = document.getElementById("uname").value;
+        let upwd1 = document.getElementById("upwd1").value;
+        let upwd2 = document.getElementById("upwd2").value;
+        let email = document.getElementById("email").value;
+        if (check === false) {
+            alert("请先勾选服务协议")
+        } else if (name === '' || name.length < 6) {
+            alert("账号格式错误")
+        } else if (upwd1 === '' || upwd1.length < 6 || upwd1.length > 18) {
+            alert('密码格式错误')
+        } else if (upwd2 !== upwd1) {
+            alert('密码不一致')
+        } else if (email === '') {
+            alert("请先输入邮箱")
+        } else {
+            let url = "/library/user/reg?uname=" + name + "&upwd=" + upwd1 + "&email=" + email
+            let xhr = new XMLHttpRequest()
+            //2.打开服务器连接
+            xhr.open('GET', url)
+            xhr.onload = function () {
+                let result = xhr.responseText;
+                if (result === "注册成功") {
+                    window.location.href = './login.html'
+                } else {
+                    location.reload()
+                    alert("注册失败")
+                }
+            }
+            //4.给服务器发送请求
+            xhr.send()
+        }
     }
 
 </script>

@@ -31,9 +31,9 @@ router.get('/reg', (req, res) => {
     pool.query(sql, [req.query], (error, result) => {
         if (error) throw error
         if (result.affectedRows !== 0) {
-            console.log("注册成功")
+            res.send("注册成功")
         } else {
-            console.log("注册失败")
+            res.send("注册失败")
         }
     })
 })
