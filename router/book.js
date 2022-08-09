@@ -32,3 +32,19 @@ router.get('/indexBook', (req, res) => {
         }
     })
 })
+
+//根据id查询具体图书
+//get /books
+//http://127.0.0.1:9000/library/book/bookId?bid=1
+router.get('/bookId', (req, res) => {
+    let id = req.query.bid
+    let sql = 'select * from  where l_det bid=?'
+    pool.query(sql, [id], (error, result) => {
+        if (error) throw error
+        if (result) {
+            res.send({code: 200, data: result})
+        } else {
+            res.send({code: 404, data: '没有数据'})
+        }
+    })
+})

@@ -106,7 +106,7 @@ footer{
     background: #21282d;
     font-family: "Microsoft YaHei";
 }
-.footerConteiner{
+.footerContainer{
     color: #6a7484;
     display: flex;
     flex-direction: column;
