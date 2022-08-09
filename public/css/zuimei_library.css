@@ -1,7 +1,15 @@
 #zuimei_content{
     width: 970px;
     margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 36px;
+    display: grid;
 }
+#zuimei_content::after{
+    clear: both;
+    display: table;
+}
+
 #zuimei_content .nav_title{
     margin-top: 44px;
     margin-bottom: 63px;
@@ -31,24 +39,25 @@
 }
 
 .single_product{
+    width: 140px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    width: 244px;
     cursor: pointer;
     transition: all 0.7s;
+    float: left;
+    margin: 0 20px;
 }
 .single_product:hover{
-    
     box-shadow: 1px 1px 1px 1px #ddd;
 }
 .single_product img{
-    width: 244px;
+    width: 100%;
     height: 140px;
     margin-bottom: 10px;
 }
 .single_product p{
-    width: 244px;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -60,7 +69,7 @@
     display: block;
     font-size: 12px;
     color: #9ba6ba;
-    width: 244px;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

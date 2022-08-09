@@ -1,6 +1,7 @@
 body{
+    background: url(../images/index/login_bg.png) no-repeat;
     background-size: 100% 100% ;
-    background: url(../img/login_bg.png) no-repeat fixed;
+    background-attachment: fixed;
 }
 html{
     background: none;
@@ -9,7 +10,7 @@ html{
     width: 970px; 
     margin: 0 auto;
 }   
-.content{
+.conten{
     position: absolute;
     top: 40%;
     left: 50%;
@@ -30,24 +31,27 @@ html{
     letter-spacing: 2px;    
     text-align: center;
 }
-.content img{
+.conten img{
     width: 220px;
     height: 66px;
     vertical-align: middle;
     margin: 0 auto;
 }
 .login_text{
-    /* text-align: center; */
     margin-top: 26px;
-    /* padding: 0 50px; */
     height: 40px;
     box-sizing: border-box;
     line-height: 40px;
     display: block;
     list-style: none;
-    font-size: 18px;
     font-weight: bold;
+}
+.login_text>a{
+    font-size: 18px;
     color: #303133;
+}
+.login_text>a:hover{
+    color: #3aaa75;
 }
 .user_pwd{
     color: #333;
@@ -59,7 +63,7 @@ html{
     border-radius: 4px;
     border: 1px solid #dcdfe6;
     box-sizing: border-box;
-    color: rgba(50,50,50,.3);
+    /* color: rgba(50,50,50,.3); */
     display: block;
     line-height: 52px;
     font-family: "微软雅黑";

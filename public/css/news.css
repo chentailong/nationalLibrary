@@ -1,0 +1,115 @@
+.contentContainer {
+    width: 970px;
+    margin: 0 auto;
+    font-family: "Microsoft YaHei";
+
+}
+
+.nav_title{
+    /* margin-top: 44px;s */
+    margin-bottom: 63px;
+    
+}
+.nav_title>p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    color: #6a7484;
+    letter-spacing: 3px;
+}
+.nav_title>p>a{
+    color: #6a7484;
+}
+.nav_title>a,span{
+    letter-spacing: 0px;
+}
+.nav_title span{
+    cursor: pointer;
+}
+
+.articleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.articleItem {
+    margin-bottom: 36px;
+    cursor: pointer;
+}
+
+.articleImg {
+    width: 260px;
+    height: 122px;
+    margin-bottom: 18px;
+}
+
+.title {
+    width: 260px;
+    height: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #09172f;
+}
+
+.time {
+    font-size: 14px;
+    color: #6a7484;
+}
+/* 底部数字 */
+ .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background: #3aaa75 !important;
+}
+
+.el-pager, .el-pager li {
+    vertical-align: top;
+    margin: 0;
+    display: inline-block;
+}
+ .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background: #3aaa75!important;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #409eff;
+    color: #fff;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+    margin: 0 5px;
+    background-color: #f4f4f5;
+    color: #606266;
+    min-width: 30px;
+    border-radius: 2px;
+}
+.el-pager li.active {
+    color: #409eff;
+    cursor: default;
+}
+.el-pager li {
+    padding: 0 4px;
+    background: #fff;
+    font-size: 13px;
+    min-width: 35.5px;
+    height: 28px;
+    line-height: 28px;
+    box-sizing: border-box;
+}
+.el-pager, .el-pager li {
+    vertical-align: top;
+    margin: 0;
+    display: inline-block;
+}
+.el-pager li, .el-pager li.btn-quicknext:hover, .el-pager li.btn-quickprev:hover {
+    cursor: pointer;
+}
+.el-pager li, .el-pagination__editor {
+    text-align: center;
+}

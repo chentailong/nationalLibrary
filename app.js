@@ -11,3 +11,5 @@ let loginRouter = require('./router/user');
 app.use('/library/user', loginRouter);
 let art = require('./router/article');
 app.use('/library/art', art);
+let book = require('./router/book');
+app.use('/library/book',book);
