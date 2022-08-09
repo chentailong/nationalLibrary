@@ -121,46 +121,47 @@
 		<div class="serviceTitle">热卖好书</div>
 		<div class="serviceEndTitle">Popular books</div>
 		<div class="bookContent">
-			<a href="#" class="bookItem"><img src="images/index/book_01.jpg" alt="行在阳秋" class="bookCover">
-				<strong class="bookName">行在阳秋</strong>
+			<a href="#" class="bookItem"><img src="images/index/book_01.jpg" alt="行在阳秋" class="bookCover" id="bookItem">
+				<strong class="bookName" id="bookName">行在阳秋</strong>
 			</a>
-			<a href="#" class="bookItem">
-				<img src="images/index/book_02.jpg" alt="文史通义" class="bookCover">
-				<strong class="bookName">文史通义</strong>
-			</a>
-			<a href="#" class="bookItem">
-				<img src="images/index/book_03.jpg" alt="西伯利東偏紀要" class="bookCover">
-				<strong class="bookName">西伯利東偏紀要</strong>
-			</a>
-			<a href="#" class="bookItem">
-				<img src="images/index/book_04.jpg" alt="西征石城记" class="bookCover">
-				<strong class="bookName">西征石城记</strong>
-			</a>
-			<a href="#" class="bookItem">
-				<img src="images/index/book_05.jpg" alt="夏日独直，寄萧侍御" class="bookCover">
-				<strong class="bookName">夏日独直，寄萧侍御</strong>
-			</a>
-		</div>
-		<div class="bookContent">
-			<a href="#" class="bookItem">
-				<img src="images/index/book_06.jpg" class="bookCover">
-				<strong class="bookName">夏日青龙寺寻僧二首</strong>
-			</a>
-			<a href="#" class="bookItem">
-				<img src="images/index/book_07.jpg" class="bookCover">
-				<strong class="bookName">夏商野史</strong>
-			</a>
-			<a href="#" class="bookItem"><img src="images/index/book_08.jpg" class="bookCover">
-				<strong class="bookName">夏晚初霁南省寓直用</strong>
-			</a>
-			<a href="#" class="bookItem">
-				<img src="images/index/book_09.jpg" class="bookCover">
-				<strong class="bookName">夏小正</strong>
-			</a>
-			<a href="#" class="bookItem">
-				<img src="images/index/book_10.jpg" class="bookCover">
-				<strong class="bookName">先拨志始</strong>
-			</a>
+
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_02.jpg" alt="文史通义" class="bookCover">-->
+<!--				<strong class="bookName">文史通义</strong>-->
+<!--			</a>-->
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_03.jpg" alt="西伯利東偏紀要" class="bookCover">-->
+<!--				<strong class="bookName">西伯利東偏紀要</strong>-->
+<!--			</a>-->
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_04.jpg" alt="西征石城记" class="bookCover">-->
+<!--				<strong class="bookName">西征石城记</strong>-->
+<!--			</a>-->
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_05.jpg" alt="夏日独直，寄萧侍御" class="bookCover">-->
+<!--				<strong class="bookName">夏日独直，寄萧侍御</strong>-->
+<!--			</a>-->
+<!--		</div>-->
+<!--		<div class="bookContent">-->
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_06.jpg" class="bookCover">-->
+<!--				<strong class="bookName">夏日青龙寺寻僧二首</strong>-->
+<!--			</a>-->
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_07.jpg" class="bookCover">-->
+<!--				<strong class="bookName">夏商野史</strong>-->
+<!--			</a>-->
+<!--			<a href="#" class="bookItem"><img src="images/index/book_08.jpg" class="bookCover">-->
+<!--				<strong class="bookName">夏晚初霁南省寓直用</strong>-->
+<!--			</a>-->
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_09.jpg" class="bookCover">-->
+<!--				<strong class="bookName">夏小正</strong>-->
+<!--			</a>-->
+<!--			<a href="#" class="bookItem">-->
+<!--				<img src="images/index/book_10.jpg" class="bookCover">-->
+<!--				<strong class="bookName">先拨志始</strong>-->
+<!--			</a>-->
 		</div>
 		<a href="zuimei_library.html" class="btnContainer">
 			<div class="btnText">MORE</div>
@@ -270,6 +271,21 @@
 </body>
 <script>
 
+    const xhr = new XMLHttpRequest();
+    const url = '/library/book/books'
+
+    //2.打开服务器连接
+    xhr.open('GET', url)
+    //3.提前准备响应消息后的操作
+    xhr.onload = function () {
+        let json = JSON.parse(xhr.responseText);
+        let data = json.data
+        console.log(json.data)
+        for (let i = 0; i < data.length; i++) {
+            bookName.innerHTML = data[i].btitle
+        }
+    }
+    xhr.send()
 
 </script>
 
