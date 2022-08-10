@@ -11,7 +11,7 @@ window.onload = function f1() {
 					clearInterval(timer);
 				}
 				for (var j = 0; j < pic_li.length; j++) {
-					if (button_li[j] == this) {
+					if (button_li[j] === this) {
 						current_index = j;
 						button_li[j].className = "current";
 						pic_li[j].className = "current";
@@ -28,11 +28,11 @@ window.onload = function f1() {
 
 		function autoChange() {
 			++current_index;
-			if (current_index == button_li.length) {
+			if (current_index === button_li.length) {
 				current_index = 0;
 			}
 			for (var i = 0; i < button_li.length; i++) {
-				if (i == current_index) {
+				if (i === current_index) {
 					button_li[i].className = "current";
 					pic_li[i].className = "current";
 				} else {
