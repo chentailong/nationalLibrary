@@ -49,3 +49,23 @@ router.get('/indexArticle', (req, res) => {
         }
     })
 })
+
+//分页查询
+//get /newPaging
+//http://127.0.0.1:9000:library/art/newPaging
+router.get('/newPaging', (req, res) => {
+    let start = parseInt(req.query.start);
+    let sql = 'select * from l_article LIMIT ?,?'
+    let count = 9;
+    if (start === null || start === 0) {
+        start = 1
+    }
+    pool.query(sql, [(start - 1) * count, count], (error, result) => {
+        if (error) throw error
+        if (result) {
+            res.send({code: 200, data: result})
+        } else {
+            res.send({code: 404, data: '没有数据'})
+        }
+    })
+})

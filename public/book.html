@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>book</title>
+	<link rel="stylesheet" href="css/header_footer.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/book.css">
+</head>
+
+<body>
+<!-- 导航部分 -->
+<nav>
+	<div class="content">
+		<div class="titleLogo">
+			<img src="img/index/logo.jpg" class="logoIco">
+		</div>
+		<div class="rightContainer">
+			<ul class="fl clearfix">
+				<li><a href="index.html" title="藏书馆"> 首页 </a></li>
+				<li><a href="library_story.html" title="图书馆故事"> 图书馆故事 </a></li>
+				<li><a href="nominate.html" title="最美图书馆"> 推荐图书 </a></li>
+				<li><a href="news.html" title="新闻推荐"> 文章推荐 </a></li>
+			</ul>
+			<div class="login_reg">
+				<a href="login.html">登录</a> | <a href="register.html">注册</a>
+			</div>
+		</div>
+	</div>
+</nav>
+<!-- 导航部分 -->
+<!-- 内容部分 -->
+<section>
+	<div class="container" style="overflow: hidden;margin-top: 61px;">
+		<div class="contentBook">
+			<div class="nav_title">
+				<p><a href="./index.html"> 首页</a> &nbsp; => &nbsp;<a href="./nominate.html"> 推荐图书</a>
+					&nbsp; => &nbsp;<span id="title"></span>
+				</p>
+			</div>
+			<div class="contentContainer">
+				<div class="bookContent">
+					<div class="bookInfo">
+						<div class="copyContent">
+							<div class="bookItem bookCover">
+								<img src="" alt="" class="bookImg">
+							</div>
+
+							<div class="copyrightItem">
+								<h3 class="copyrightText">书名：</h3>
+								<div class="copyrightTextTow">1</div>
+							</div>
+							<div class="copyrightItem">
+								<h3 class="copyrightText">作者：</h3>
+								<div class="copyrightTextTow">2</div>
+							</div>
+							<div class="copyrightItem">
+								<div class="copyrightText">出版社：</div>
+								<div class="copyrightTextTow">3</div>
+							</div>
+							<div class="copyrightItem">
+								<div class="copyrightText">ISBN：</div>
+								<div class="copyrightTextTow">4</div>
+							</div>
+							<div class="copyrightItem">
+								<div class="copyrightText">电子出版物发行数量：</div>
+								<div class="copyrightTextTow">5</div>
+							</div>
+							<div class="copyrightItem">
+								<div class="copyrightText">版权持有：</div>
+								<div class="copyrightTextTow">6</div>
+							</div>
+							<div class="copyrightItem">
+								<div class="copyrightText">电子出版物发行单位：</div>
+								<div class="copyrightTextTow">7</div>
+							</div>
+							<div class="copyrightItem">
+								<div class="copyrightText">电子出版物发行批次：</div>
+								<div class="copyrightTextTow">8</div>
+							</div>
+							<div class="copyrightItem">
+								<div class="copyrightText">电子出版物发行时间：</div>
+								<div class="copyrightTextTow">9</div>
+							</div>
+							<div class="introduction">图书简介</div>
+							<h2 class="introductionText"> 10 </h2>
+						</div>
+					</div>
+					<div class="introductionP">评分</div>
+					<div class="scoreContainer">
+						<div class="scoreNum">5.0分</div>
+						<div class="scoreStart">
+							<img src="./img/book/xing.png" alt="" class="startIco">
+							<img src="./img/book/xing.png" alt="" class="startIco">
+							<img src="./img/book/xing.png" alt="" class="startIco">
+							<img src="./img/book/xing.png" alt="" class="startIco">
+							<img src="./img/book/xing.png" alt="" class="startIco">
+						</div>
+					</div>
+					<div class="introduction">书评</div>
+					<div class="viewAll">查看全部书评</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- 内容部分 -->
+<!-- footer -->
+<footer class="footerContainer">
+	<div class="footerContent">
+		<div class="footerLeft">
+			<div class="lineText">
+				联系我们
+				<span style="font-size: 16px;margin-left: 9px">Contact</span>
+			</div>
+			<div class="textItem" style="margin-bottom: 47px">
+				如您有任何疑问，请通过如下方式联系我们
+			</div>
+			<div class="textItem">
+				邮箱：88888888@126.com
+			</div>
+			<div class="textItem">
+				电话：8888- 88888888
+			</div>
+			<div class="textItem" style="margin-bottom: 45px">
+				客服QQ：88888888
+			</div>
+			<div class="textItem">
+				Copyright © www.zhonguolibrary.com, All Rights Reserved. 拥有主宰自己的力量
+			</div>
+		</div>
+		<div class="footerRight">
+			<div class="companyTitle">
+				关注微信公众号
+			</div>
+			<div class="textItem">
+				获取最新分享内容
+			</div>
+			<img src="img/index/Code.jpg" class="codeIco">
+			<div class="scanText">
+				微信扫一扫关注
+			</div>
+			<div class="scanText">
+				或搜索关注
+				<span style="color: #D67C5A">中国图书馆官方</span>
+			</div>
+		</div>
+	</div>
+	<div class="footerTitle"></div>
+</footer>
+</body>
+
+<script>
+    let idArray = window.location.search.split('=');
+    let bid = idArray[1];   // 获取路由id
+
+    showBookDetail();
+
+    function showBookDetail() {
+        var it = document.getElementsByClassName("copyrightTextTow")
+        const xhr = new XMLHttpRequest();
+        const url = '/library/book/bookId?bid=' + bid
+        xhr.open('GET', url)
+        xhr.onload = function () {
+            let json = JSON.parse(xhr.responseText);
+            let data = json.data
+            let time = formatDate(data[0].ddate)
+            console.log(data)
+            it[0].innerHTML = data[0].btitle
+            it[1].innerHTML = data[0].dauthor
+            it[2].innerHTML = data[0].dcrt
+            it[3].innerHTML = data[0].dISBN
+            it[4].innerHTML = data[0].dnumber
+            it[5].innerHTML = data[0].dpbh
+            it[6].innerHTML = data[0].dunit
+            it[7].innerHTML = data[0].dbatch
+            it[8].innerHTML = time
+            document.getElementById('title').innerText = data[0].btitle
+            document.getElementsByClassName("introductionText")[0].innerHTML = data[0].ditd
+            // document.getElementsByClassName("bookImg")[0].style.background =  `url('${data[0].bimg}') no-repeat`
+            document.getElementsByClassName('bookImg')[0].src = `${data[0].bimg}`
+        }
+        xhr.send()
+    }
+
+
+    // 转换时间戳
+    function formatDate(oldDate) {
+        function add0(num) {
+            return num < 10 ? '0' + num : num
+        }
+
+        const date = new Date(oldDate)
+        const Y = date.getFullYear()
+        const M = date.getMonth() + 1
+        const D = date.getDate()
+        return Y + '-' + add0(M) + '-' + add0(D);
+    }
+
+</script>
+
+</html>

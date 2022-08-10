@@ -1,0 +1,243 @@
+.container {
+    margin: 0 auto;
+    width: 970px;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 580px;
+    font-family: "Microsoft YaHei";
+}
+
+.contentBook {
+    width: 100%;
+}
+
+.nav_title {
+    margin-top: 44px;
+    margin-bottom: 63px;
+
+}
+
+.nav_title p, a, span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    color: #6a7484;
+}
+
+
+.tgaItem {
+    cursor: pointer;
+}
+
+.bookContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: 51px;
+}
+
+.copyrightText {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.copyrightTextTow {
+    margin-left: 10px;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.codeContainer {
+    height: 267px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e4e8eb;
+}
+
+.downIco {
+    height: 140px;
+    margin-bottom: 4px;
+    padding: 0 35px;
+}
+
+
+.bookInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 56px
+}
+
+.bookItem img {
+    width: 144px;
+    height: 206px;
+    margin-right: 19px;
+}
+
+.bookItem {
+    display: inline;
+    height: 206px;
+    width: 144px;
+    position: absolute;
+}
+
+.copyContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 160px;
+    padding-right: 113px;
+    position: relative;
+}
+
+.copyrightItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    color: #09172f;
+    margin-bottom: 5px;
+    padding-left: 160px;
+}
+
+.copyrightItemNoe {
+    position: absolute;
+}
+
+.introduction {
+    font-size: 18px;
+    color: #3aaa75;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-top: 28px;
+}
+
+.introductionP{
+    font-size: 18px;
+    color: #3aaa75;
+    font-weight: 600;
+    margin-top: 400px;
+    position: absolute;
+}
+
+.introductionText {
+    font-size: 14px;
+    color: #09172f;
+    line-height: 28px;
+    margin-bottom: 53px;
+    font-weight: 400;
+}
+
+.scoreContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 230px;
+}
+
+
+.scoreNum {
+    font-size: 14px;
+    color: #444;
+    margin-right: 7px;
+    font-weight: 600;
+}
+
+.startIco {
+    width: 17px;
+    height: 16px;
+    margin-right: 7px;
+}
+
+.bookReview {
+    padding-top: 12px;
+    border-bottom: 1px solid #e4e8eb;
+    margin-bottom: 28px;
+}
+
+.reviewUser {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.reviewUser,
+.userInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userIco {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.userName {
+    color: #09172f;
+    font-size: 16px;
+}
+
+.startContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.startText {
+    font-size: 14px;
+    color: #9ba6ba;
+    margin-right: 5px;
+}
+
+.startUserIco {
+    width: 11px;
+    height: 10px;
+    margin-right: 4px;
+}
+
+.reviewText {
+    font-size: 14px;
+    line-height: 28px;
+    color: #09172f;
+    margin-bottom: 16px;
+}
+
+.reviewEnd {
+    justify-content: space-between;
+    font-size: 14px;
+    color: #9ba6ba;
+}
+
+.choseContainer,
+.reviewEnd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.choseContainer {
+    margin-bottom: 19px;
+}
+
+.choseItem {
+    margin-left: 38px;
+}
+
+.viewAll {
+    font-size: 14px;
+    color: #3aaa75;
+    font-weight: 600;
+    margin-bottom: 36px;
+    text-align: center;
+    cursor: pointer;
+}

@@ -113,3 +113,9 @@
 .el-pager li, .el-pagination__editor {
     text-align: center;
 }
+
+.margin {
+    width: 100%;
+    margin-bottom: 36px;
+    text-align: center;
+}
