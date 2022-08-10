@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>推荐图书</title>
-	<link rel="stylesheet" href="./css/public.css">
+	<title>文章详情-图书馆</title>
 	<link rel="stylesheet" href="./css/header_footer.css">
-	<link rel="stylesheet" href="css/nominate.css">
-</head>
+	<link rel="stylesheet" href="./css/public.css">
+	<link rel="stylesheet" href="./css/news_details.css">
 
+</head>
 <body>
 <!-- 导航部分 -->
 <nav>
@@ -23,7 +22,7 @@
 				<li><a href="index.html" title="藏书馆"> 首页 </a></li>
 				<li><a href="library_story.html" title="图书馆故事"> 图书馆故事 </a></li>
 				<li><a href="nominate.html" title="最美图书馆"> 推荐图书 </a></li>
-				<li><a href="news.html" title="新闻推荐"> 新闻推荐 </a></li>
+				<li><a href="news.html" title="新闻推荐"> 文章推荐 </a></li>
 			</ul>
 			<div class="login_reg">
 				<a href="login.html">登录</a> | <a href="register.html">注册</a>
@@ -33,19 +32,27 @@
 </nav>
 <!-- 导航部分 -->
 <!-- 内容部分 -->
-<div id="nominate_content">
+
+<div id="details_content">
 	<div class="nav_title">
-		<p><a href="#"> 首页</a> &nbsp; => &nbsp;<span>推荐图书</span></p>
+		<p>
+			<a href="index.html">首页</a> &nbsp; => &nbsp; <span><a href="news.html">新闻推荐</a></span> &nbsp; => &nbsp;
+			<a href="#" id="title"></a>
+		</p>
 	</div>
-	<div class="nominate_title">
-		<h1>推荐图书</h1>
+
+	<div class="date_time">
+		<p id="year">2022</p>
+		<p id="day">08·09</p>
+		<p>文章详情</p>
 	</div>
-	<div class="class"></div>
-	<div class="nominate_list" id="nominate_list"></div>
+	<div class="details_img">
+		<img src="" alt="" id="content">
+	</div>
 </div>
 
-
-<!-- 底部 -->
+<!-- 内容部分结束 -->
+<!-- footer -->
 <footer class="footerContainer">
 	<div class="footerContent">
 		<div class="footerLeft">
@@ -90,32 +97,45 @@
 </footer>
 
 <script>
-    showRandom()
+    let idArray = window.location.search.split('=');
+    let tid = idArray[1];   // 获取路由id
 
-    function showRandom() {
+
+    selectCount()
+
+    function selectCount() {
         const xhr = new XMLHttpRequest();
-        const url = '/library/book/randomBook'
+        const url = '/library/art/art_detail?tid=' + tid
         xhr.open('GET', url)
         xhr.onload = function () {
             let json = JSON.parse(xhr.responseText);
-            let data = json.data
-            let str = ''
-            for (let i = 0; i < data.length; i++) {
-                str += `
-						 <a class="single_product" href="nominate_detail.html?bid=${data[i].bid}">
-						 <img src="${data[i].bimg}" alt="">
-						 <p>${data[i].btitle}</p>
-						 <span>分类：${data[i].bclass}</span>
-						 </a>
-						`
-            }
-            nominate_list.innerHTML = str
+            let year = formatYear(json.data[0].ttime)
+            let day = formatMonth(json.data[0].ttime)
+            document.getElementById('title').innerText = `${json.data[0].ttitle}`
+            document.getElementById('content').src = `${json.data[0].tcont}`
+            document.getElementById('year').innerText = year
+            document.getElementById('day').innerText = day
         }
         xhr.send()
     }
 
-    
-</script>
-</body>
+    function formatYear(oldDate) {
+        const date = new Date(oldDate)
+        return date.getFullYear();
+    }
 
+    function formatMonth(oldDate) {
+        function add0(num) {
+            return num < 10 ? '0' + num : num
+        }
+
+        const date = new Date(oldDate)
+        const M = date.getMonth() + 1
+        const D = date.getDate()
+        return add0(M) + '-' + add0(D);
+    }
+
+</script>
+
+</body>
 </html>

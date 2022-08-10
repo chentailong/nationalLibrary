@@ -36,7 +36,7 @@
 <section>
 	<div class="contentContainer" style="overflow: hidden; margin-top: 80px;">
 		<div class="nav_title">
-			<p><a href="#">首页</a> &nbsp; => &nbsp; <span>文章推荐</span></p>
+			<p><a href="index.html">首页</a> &nbsp; => &nbsp; <span>文章推荐</span></p>
 		</div>
 		<section class="articleContainer" id="articleContainer">
 
@@ -113,7 +113,7 @@
             for (let i = 0; i < data.length; i++) {
                 time = formatDate(data[i].ttime)
                 str += `
-						<a href="#" class="articleItem">
+						<a href="./news_details.html?tid=${data[i].tid}" class="articleItem">
 						<img src="${data[i].timg}" alt="" class="articleImg">
 					    <h3 class="title">${data[i].ttitle}</h3>
 						<strong class="time">${time}</strong>

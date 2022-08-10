@@ -24,11 +24,11 @@ router.get('/article', (req, res) => {
 //http://127.0.0.1:9000/library/art/art_detail?tid=1
 router.get('/art_detail', (req, res) => {
     let tid = req.query.tid
-    let sql = 'select tcont from l_article where tid=?'
-    console.log(req.query)
+    let sql = 'select * from l_article where tid=?'
     pool.query(sql, [tid], (error, result) => {
         if (error) throw error
         if (result) {
+            console.log(result)
             res.send({code: 200, data: result})
         } else {
             res.send({code: 404, data: '暂无数据'})
