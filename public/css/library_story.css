@@ -36,35 +36,37 @@
     font-weight: bold;
     margin-bottom: 14px;
 }
-.conten_name{
-    margin-left: 418px;
+.content_name{
+    margin-left: 490px;
     margin-bottom: 60px;
     font-size: 18px;
     color: #6a7484;
 }
 .content_text img{
     width: 100%;
-    height: 640px;
+    padding: 20px;
+    height: 500px;
     margin-bottom: 16px;
+    border-radius: 30px;
 }
 .content_text b{
     display: block;
     font-size: 14px;
     color: #9ba6ba;
     font-weight: normal;
+    margin-left: 30px;
 }
 .content_text p{
-    font-size: 14px;
+    font-family: "微软雅黑";
+    font-size: 16px;
     line-height: 28px;
 }
-.strong_1,.strong_2{
+.strong_1{
     color: #09172f;
     font-weight: bold;
 }
 .strong_1{
-    font-size: 14px;
+    font-size: 18px !important;
 }
-.strong_2{
-    font-size: 26px !important;
-}
+
 

@@ -4,11 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>文章详情-图书馆</title>
+	<title>图书分类</title>
 	<link rel="stylesheet" href="./css/header_footer.css">
 	<link rel="stylesheet" href="./css/public.css">
-	<link rel="stylesheet" href="./css/news_details.css">
-
+	<link rel="stylesheet" href="./css/book_class.css">
 </head>
 <body>
 <!-- 导航部分 -->
@@ -34,26 +33,28 @@
 <!-- 导航部分 -->
 <!-- 内容部分 -->
 
-<div id="details_content">
-	<div class="nav_title">
-		<p>
-			<a href="index.html">首页</a> &nbsp; => &nbsp; <span><a href="news.html">新闻推荐</a></span> &nbsp; => &nbsp;
-			<a href="#" id="title"></a>
-		</p>
-	</div>
+<div id="book_class">
+	<div class="filling"></div>
 
-	<div class="date_time">
-		<p id="year">2022</p>
-		<p id="day">08·09</p>
-		<p>文章详情</p>
+	<div class="book_nav">
+		<ul id="bclass">
+			<li class="render" onclick="showBook()">全部</li>
+			<li onclick="showClassBook('小说')">小说</li>
+			<li onclick="showClassBook('文学')">文学</li>
+			<li onclick="showClassBook('心理学')">心理学</li>
+			<li onclick="showClassBook('励志与成功')">励志与成功</li>
+			<li onclick="showClassBook('历史')">历史</li>
+			<li onclick="showBook()">其他</li>
+		</ul>
 	</div>
-	<div class="details_img">
-		<img src="" alt="" id="content">
+	<div class="book_quantity">
+		<div class="book_list" id="book_list">
+		</div>
 	</div>
 </div>
 
+
 <!-- 内容部分结束 -->
-<!-- footer -->
 <footer class="footerContainer">
 	<div class="footerContent">
 		<div class="footerLeft">
@@ -98,42 +99,56 @@
 </footer>
 
 <script>
-    let idArray = window.location.search.split('=');
-    let tid = idArray[1];   // 获取路由id
 
+    window.onload = function () {
+        showBook()
+    }
 
-    selectCount()
+    showClassBook()
 
-    function selectCount() {
+    function showBook() {
         const xhr = new XMLHttpRequest();
-        const url = '/library/art/art_detail?tid=' + tid
+        const url = '/library/book/books'
         xhr.open('GET', url)
         xhr.onload = function () {
             let json = JSON.parse(xhr.responseText);
-            let year = formatYear(json.data[0].ttime)
-            let day = formatMonth(json.data[0].ttime)
-            document.getElementById('title').innerText = `${json.data[0].ttitle}`
-            document.getElementById('content').src = `${json.data[0].tcont}`
-            document.getElementById('year').innerText = year
-            document.getElementById('day').innerText = day
+            let data = json.data
+            let strContent = ''
+            for (let i = 0; i < data.length; i++) {
+                strContent += `
+	            <a class="book_product" href="nominate_detail.html?bid=${data[i].bid}">
+				<img src="${data[i].bimg}" alt="">
+				<p>${data[i].btitle}</p>
+				<span>分类：${data[i].bclass}</span>
+				</a>
+	            `
+            }
+            book_list.innerHTML = strContent
         }
         xhr.send()
     }
 
-    function formatYear(oldDate) {
-        const date = new Date(oldDate)
-        return date.getFullYear();
-    }
 
-    function formatMonth(oldDate) {
-        function add0(num) {
-            return num < 10 ? '0' + num : num
+    function showClassBook(bclass) {
+        let url = '/library/book/bookCl?bclass=' + bclass
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url)
+        xhr.onload = function () {
+            let json = JSON.parse(xhr.responseText);
+            let data = json.data
+            let strContent = ''
+            for (let i = 0; i < data.length; i++) {
+                strContent += `
+	            <a class="book_product" href="nominate_detail.html?bid=${data[i].bid}">
+				<img src="${data[i].bimg}" alt="">
+				<p>${data[i].btitle}</p>
+				<span>分类：${data[i].bclass}</span>
+				</a>
+	            `
+            }
+            book_list.innerHTML = strContent
         }
-
-        const date = new Date(oldDate)
-        const M = date.getMonth() + 1
-        const D = date.getDate()
-        return add0(M) + '-' + add0(D);
+        xhr.send()
     }
 
 </script>

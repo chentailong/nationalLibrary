@@ -19,6 +19,22 @@ router.get('/books', (req, res) => {
     })
 })
 
+//根据分类查询图书数据
+//get /bookCl
+//http://127.0.0.1:9000/library/book/bookCl?bclass=?
+router.get('/bookCl', (req, res) => {
+    let bclass = req.query.bclass
+    let sql = 'select * from l_book where bclass=?'
+    pool.query(sql, [bclass], (error, result) => {
+        if (error) throw error
+        if (result) {
+            res.send({code: 200, data: result})
+        } else {
+            res.send({code: 404, data: '没有数据'})
+        }
+    })
+})
+
 //查询十条图书，用于首页显示
 //http://127.0.0.1:9000/library/book/indexBook
 router.get('/indexBook', (req, res) => {

@@ -1,0 +1,83 @@
+#book_class {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.filling {
+    height: 60px;
+}
+
+#book_class .book_nav {
+    float: left;
+    width: 150px;
+    border-right: 1px solid #ddd;
+}
+
+.book_nav ul > li {
+    height: 65px;
+    line-height: 65px;
+    padding-left: 18px;
+    color: #64667b;
+    font-size: 16px;
+    cursor: pointer;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.render, .render > a {
+    background: #eff9f4;
+    font-weight: 600;
+    color: #3aaa75 !important;
+}
+
+.book_quantity {
+    width: 800px;
+    float: left;
+}
+
+.book_list {
+
+    margin-top: 10px;
+}
+
+.book_product {
+    width: 120px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.7s;
+    float: left;
+    margin: 0 20px;
+}
+
+.book_product:hover {
+    box-shadow: 1px 1px 1px 1px #ddd;
+}
+
+.book_product img {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+.book_product p {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    color: #09172f;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.book_product span {
+    display: block;
+    font-size: 12px;
+    color: #9ba6ba;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}

@@ -28,7 +28,6 @@ router.get('/art_detail', (req, res) => {
     pool.query(sql, [tid], (error, result) => {
         if (error) throw error
         if (result) {
-            console.log(result)
             res.send({code: 200, data: result})
         } else {
             res.send({code: 404, data: '暂无数据'})
