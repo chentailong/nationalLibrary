@@ -8,7 +8,8 @@
 	<title>图书详情</title>
 	<link rel="stylesheet" href="css/header_footer.css">
 	<link rel="stylesheet" href="css/public.css">
-	<link rel="stylesheet" href="css/book.css">
+	<link rel="stylesheet" href="css/nominate_detail.css">
+	<script src="./js/cookie.js"></script>
 </head>
 
 <body>
@@ -26,9 +27,10 @@
 				<li><a href="news.html" title="新闻推荐"> 文章推荐 </a></li>
 				<li><a href="book_class.html" title="图书分类"> 图书分类 </a></li>
 			</ul>
-			<div class="login_reg">
+			<div class="login_reg" id="login_reg">
 				<a href="login.html">登录</a> | <a href="register.html">注册</a>
 			</div>
+			<a href="" id="personal"><span id="cUser"></span></a>
 		</div>
 	</div>
 </nav>
@@ -39,10 +41,10 @@
 		<div class="contentBook">
 			<div class="tagList">
 				<div class="tgaItem">
-					<a href="/" class="nuxt-link-active">首页</a>
+					<a href="index.html" class="nuxt-link-active">首页</a>
 				</div>
 				<div>&nbsp;=>&nbsp;</div>
-				<div class="tgaItem">图书详情&nbsp;=>&nbsp;</div>
+				<div class="tgaItem">图书详情&nbsp;/&nbsp;</div>
 				<div id="title"></div>
 			</div>
 			<div class="bookCover">
@@ -75,7 +77,8 @@
 			</div>
 		</div>
 		<div class="introduction">书评</div>
-		<div class="viewAll">查看全部书评</div>
+		<div class="viewAll"><a onclick="f1();">加入收藏</a>&emsp;&emsp;&emsp;<a onclick="f1();">点击阅读</a></div>
+
 	</div>
 
 </section>
@@ -156,6 +159,9 @@
         xhr.send()
     }
 
+    function f1() {
+        alert("该功能尚未开发，后续将上线");
+    }
 
     // 转换时间戳
     function formatDate(oldDate) {

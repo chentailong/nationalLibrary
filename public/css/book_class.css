@@ -81,3 +81,30 @@
     text-overflow: ellipsis;
     text-align: center;
 }
+
+
+#book_class .nav_title {
+    margin-top: 20px;
+    margin-bottom: 63px;
+
+}
+
+.nav_title p, a, span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    color: #6a7484;
+}
+
+.nav_title p {
+    letter-spacing: 3px;
+}
+
+.nav_title a, span {
+    letter-spacing: 0px;
+}
+
+.nav_title span {
+    cursor: pointer;
+}

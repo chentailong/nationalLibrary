@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="./css/header_footer.css">
 	<link rel="stylesheet" href="./css/public.css">
 	<link rel="stylesheet" href="./css/personal.css">
+	<script src="./js/cookie.js"></script>
 </head>
 <body>
 <!-- 导航部分 -->
@@ -24,9 +25,10 @@
 				<li><a href="news.html" title="新闻推荐"> 文章推荐 </a></li>
 				<li><a href="book_class.html" title="图书分类"> 图书分类 </a></li>
 			</ul>
-			<div class="login_reg">
+			<div class="login_reg" id="login_reg">
 				<a href="login.html">登录</a> | <a href="register.html">注册</a>
 			</div>
+			<a href="" id="personal"><span id="cUser"></span></a>
 		</div>
 	</div>
 </nav>
@@ -37,7 +39,7 @@
 	<div class="person_nei">
 		<div class="personal_modify">
 			<img src="./img/book/b01.jpg" alt="">
-			<p>成功学大师admin用户</p>
+			<p id="user">成功学大师admin用户</p>
 			<ul>
 				<li class="personal_one"><a href="#">修改密码</a></li>
 				<li><a href="#">基本信息</a></li>
@@ -50,7 +52,7 @@
 		<div class="personal_pwd">
 			<p>修改密码</p>
 			<div class="form">
-				<p>原密码: &nbsp;  &nbsp;<input type="password" value="" placeholder="原密码"></p>
+				<p>原密码: &nbsp; &nbsp;<input type="password" value="" placeholder="原密码"></p>
 				<p>新密码: &nbsp; &nbsp;<input type="password" value="" placeholder="新密码"></p>
 				<p>确认密码: <input type="password" value="" placeholder="确认密码"></p>
 				<input type="submit" value="提交">
@@ -104,7 +106,9 @@
 	</div>
 	<div class="footerTitle"></div>
 </footer>
-
+<script>
+    document.getElementById('user').innerHTML = getCookie('uname');
+</script>
 
 </body>
 </html>

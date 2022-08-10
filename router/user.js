@@ -51,7 +51,7 @@ router.get('/login', (req, res) => {
         if (request.length === 0) {
             res.send("登录失败")
         } else {
-            res.send("登录成功")
+            res.send({code: 400, data: request})
         }
     })
 })

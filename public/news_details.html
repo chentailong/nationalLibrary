@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="./css/header_footer.css">
 	<link rel="stylesheet" href="./css/public.css">
 	<link rel="stylesheet" href="./css/news_details.css">
+	<script src="./js/cookie.js"></script>
 
 </head>
 <body>
@@ -25,9 +26,10 @@
 				<li><a href="news.html" title="新闻推荐"> 文章推荐 </a></li>
 				<li><a href="book_class.html" title="图书分类"> 图书分类 </a></li>
 			</ul>
-			<div class="login_reg">
+			<div class="login_reg" id="login_reg">
 				<a href="login.html">登录</a> | <a href="register.html">注册</a>
 			</div>
+			<a href="" id="personal"><span id="cUser"></span></a>
 		</div>
 	</div>
 </nav>
@@ -37,7 +39,7 @@
 <div id="details_content">
 	<div class="nav_title">
 		<p>
-			<a href="index.html">首页</a> &nbsp; => &nbsp; <span><a href="news.html">文章推荐</a></span> &nbsp; => &nbsp;
+			<a href="index.html">首页</a> &nbsp; / &nbsp; <span><a href="news.html">文章推荐</a></span> &nbsp; / &nbsp;
 			<a href="#" id="title"></a>
 		</p>
 	</div>

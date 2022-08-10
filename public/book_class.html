@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="./css/header_footer.css">
 	<link rel="stylesheet" href="./css/public.css">
 	<link rel="stylesheet" href="./css/book_class.css">
+	<script src="./js/cookie.js"></script>
 </head>
 <body>
 <!-- 导航部分 -->
@@ -24,9 +25,10 @@
 				<li><a href="news.html" title="新闻推荐"> 文章推荐 </a></li>
 				<li><a href="book_class.html" title="图书分类"> 图书分类 </a></li>
 			</ul>
-			<div class="login_reg">
+			<div class="login_reg" id="login_reg">
 				<a href="login.html">登录</a> | <a href="register.html">注册</a>
 			</div>
+			<a href="" id="personal"><span id="cUser"></span></a>
 		</div>
 	</div>
 </nav>
@@ -35,6 +37,12 @@
 
 <div id="book_class">
 	<div class="filling"></div>
+	<div class="nav_title">
+		<p>
+			<a href="index.html">首页</a> &nbsp; / &nbsp; <span><a href="news.html">文章推荐</a></span>
+			<a href="#" id="title"></a>
+		</p>
+	</div>
 
 	<div class="book_nav">
 		<ul id="bclass">
@@ -101,9 +109,21 @@
 <script>
 
     window.onload = function () {
-        showBook()
-    }
 
+        showBook()
+        let user = getCookie('uname');
+        console.log(user)
+        if (user !== null) {
+            document.getElementById('login_reg').style.display = "none"
+            document.getElementById('personal').style.display = 'block'
+            document.getElementById('cUser').innerText = user
+            document.getElementById('personal').href = '../personal.html'
+
+        } else {
+            document.getElementById('login_reg').style.display = "block"
+            document.getElementById('personal').style.display = 'none'
+        }
+    }
     showClassBook()
 
     function showBook() {
