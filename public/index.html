@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>首页</title>
+	<title>国家图书馆</title>
 	<link rel="stylesheet" href="./css/public.css">
 	<link rel="stylesheet" href="css/header_footer.css">
 	<link rel="stylesheet" href="css/index.css">
@@ -133,7 +133,7 @@
 <!--新闻推荐-->
 <section>
 	<div class="articleContainer">
-		<div class="serviceTitle">新闻推荐</div>
+		<div class="serviceTitle">文章推荐</div>
 		<div class="serviceEndTitle">News Information</div>
 		<div class="articleContent" id="articleContent">
 		</div>
@@ -204,7 +204,9 @@
             let str = ''
             console.log(data)
             for (let i = 0; i < data.length; i++) {
-                str += `<a href="#" class="bookItem"> <img src= "${data[i].bimg}" class="bookCover">  ` + `<strong class="bookName">${data[i].btitle}</strong> </a>`
+                str += `<a href="nominate_detail.html?bid=${data[i].bid}" class="bookItem">
+                        <img src= "${data[i].bimg}" class="bookCover">  `
+	                +   `<strong class="bookName">${data[i].btitle}</strong> </a>`
             }
             bookContent.innerHTML = str
         }
@@ -223,7 +225,7 @@
             for (let i = 0; i < data.length; i++) {
                 time = formatDate(data[i].ttime)
                 str += `
-						<a href="#" class="articleItem">
+						<a href="news_details.html?tid=${data[i].tid}" class="articleItem">
 						<div class="dayNum">${time}</div>
 						<div class="lineView"></div>
 						<div class="articleCoverContainer"><img src="${data[i].timg}" alt="${data[i].ttitle}" class="articleCover"></div>

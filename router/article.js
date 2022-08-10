@@ -49,9 +49,9 @@ router.get('/indexArticle', (req, res) => {
     })
 })
 
-//分页查询
+//分页查询文章
 //get /newPaging
-//http://127.0.0.1:9000:library/art/newPaging
+//http://127.0.0.1:9000:library/art/newPaging?start=1'
 router.get('/newPaging', (req, res) => {
     let start = parseInt(req.query.start);
     let sql = 'select * from l_article LIMIT ?,?'

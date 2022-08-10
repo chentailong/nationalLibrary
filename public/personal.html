@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>推荐图书</title>
-	<link rel="stylesheet" href="./css/public.css">
+	<title>个人中心</title>
 	<link rel="stylesheet" href="./css/header_footer.css">
-	<link rel="stylesheet" href="css/nominate.css">
+	<link rel="stylesheet" href="./css/public.css">
+	<link rel="stylesheet" href="./css/personal.css">
 </head>
-
 <body>
 <!-- 导航部分 -->
 <nav>
@@ -32,17 +30,37 @@
 		</div>
 	</div>
 </nav>
-<!-- 导航部分 -->
 <!-- 内容部分 -->
-<div id="nominate_content">
-	<div class="nav_title">
-		<p><a href="#"> 首页</a> &nbsp; / &nbsp;<span>推荐图书</span></p>
+
+<div id="login_personal">
+	<div class="fillings"></div>
+	<div class="person_nei">
+		<div class="personal_modify">
+			<img src="./img/book/b01.jpg" alt="">
+			<p>成功学大师admin用户</p>
+			<ul>
+				<li class="personal_one"><a href="#">修改密码</a></li>
+				<li><a href="#">基本信息</a></li>
+				<li><a href="#">我的收藏</a></li>
+				<li><a href="#">头像设置</a></li>
+				<li><a href="#">我的关注</a></li>
+			</ul>
+		</div>
+
+		<div class="personal_pwd">
+			<p>修改密码</p>
+			<div class="form">
+				<p>原密码: &nbsp;  &nbsp;<input type="password" value="" placeholder="原密码"></p>
+				<p>新密码: &nbsp; &nbsp;<input type="password" value="" placeholder="新密码"></p>
+				<p>确认密码: <input type="password" value="" placeholder="确认密码"></p>
+				<input type="submit" value="提交">
+			</div>
+		</div>
 	</div>
-	<div class="class"></div>
-	<div class="nominate_list" id="nominate_list"></div>
+
 </div>
 
-
+<!-- 内容部分结束 -->
 <!-- 底部 -->
 <footer class="footerContainer">
 	<div class="footerContent">
@@ -87,33 +105,6 @@
 	<div class="footerTitle"></div>
 </footer>
 
-<script>
-    showRandom()
 
-    function showRandom() {
-        const xhr = new XMLHttpRequest();
-        const url = '/library/book/randomBook'
-        xhr.open('GET', url)
-        xhr.onload = function () {
-            let json = JSON.parse(xhr.responseText);
-            let data = json.data
-            let str = ''
-            for (let i = 0; i < data.length; i++) {
-                str += `
-						 <a class="single_product" href="nominate_detail.html?bid=${data[i].bid}">
-						 <img src="${data[i].bimg}" alt="">
-						 <p>${data[i].btitle}</p>
-						 <span>分类：${data[i].bclass}</span>
-						 </a>
-						`
-            }
-            nominate_list.innerHTML = str
-        }
-        xhr.send()
-    }
-
-    
-</script>
 </body>
-
 </html>

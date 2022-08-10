@@ -15,9 +15,9 @@ router.get('/check_name', (req, res) => {
         if (error) throw error
         console.log(result)
         if (result.length === 0) {
-            res.send("no-exists")
+            res.send({code: 200, msg: "no-exists"})
         } else {
-            res.send("exists")
+            res.send({code: 200, msg: "exists"})
         }
     })
 })
@@ -31,9 +31,9 @@ router.get('/reg', (req, res) => {
     pool.query(sql, [req.query], (error, result) => {
         if (error) throw error
         if (result.affectedRows !== 0) {
-            res.send("注册成功")
+            res.send({code: 200, msg: '注册成功'})
         } else {
-            res.send("注册失败")
+            res.send({code: 200, msg: '注册失败'})
         }
     })
 })

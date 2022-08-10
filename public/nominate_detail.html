@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>book</title>
+	<title>图书详情</title>
 	<link rel="stylesheet" href="css/header_footer.css">
 	<link rel="stylesheet" href="css/public.css">
 	<link rel="stylesheet" href="css/book.css">
@@ -35,78 +35,49 @@
 <!-- 导航部分 -->
 <!-- 内容部分 -->
 <section>
-	<div class="container" style="overflow: hidden;margin-top: 61px;">
+	<div class="container">
 		<div class="contentBook">
-			<div class="nav_title">
-				<p><a href="./index.html"> 首页</a> &nbsp; => &nbsp;<a href="./nominate.html"> 推荐图书</a>
-					&nbsp; => &nbsp;<span id="title"></span>
-				</p>
-			</div>
-			<div class="contentContainer">
-				<div class="bookContent">
-					<div class="bookInfo">
-						<div class="copyContent">
-							<div class="bookItem bookCover">
-								<img src="" alt="" class="bookImg">
-							</div>
-
-							<div class="copyrightItem">
-								<h3 class="copyrightText">书名：</h3>
-								<div class="copyrightTextTow">1</div>
-							</div>
-							<div class="copyrightItem">
-								<h3 class="copyrightText">作者：</h3>
-								<div class="copyrightTextTow">2</div>
-							</div>
-							<div class="copyrightItem">
-								<div class="copyrightText">出版社：</div>
-								<div class="copyrightTextTow">3</div>
-							</div>
-							<div class="copyrightItem">
-								<div class="copyrightText">ISBN：</div>
-								<div class="copyrightTextTow">4</div>
-							</div>
-							<div class="copyrightItem">
-								<div class="copyrightText">电子出版物发行数量：</div>
-								<div class="copyrightTextTow">5</div>
-							</div>
-							<div class="copyrightItem">
-								<div class="copyrightText">版权持有：</div>
-								<div class="copyrightTextTow">6</div>
-							</div>
-							<div class="copyrightItem">
-								<div class="copyrightText">电子出版物发行单位：</div>
-								<div class="copyrightTextTow">7</div>
-							</div>
-							<div class="copyrightItem">
-								<div class="copyrightText">电子出版物发行批次：</div>
-								<div class="copyrightTextTow">8</div>
-							</div>
-							<div class="copyrightItem">
-								<div class="copyrightText">电子出版物发行时间：</div>
-								<div class="copyrightTextTow">9</div>
-							</div>
-							<div class="introduction">图书简介</div>
-							<h2 class="introductionText"> 10 </h2>
-						</div>
-					</div>
-					<div class="introductionP">评分</div>
-					<div class="scoreContainer">
-						<div class="scoreNum">5.0分</div>
-						<div class="scoreStart">
-							<img src="./img/book/xing.png" alt="" class="startIco">
-							<img src="./img/book/xing.png" alt="" class="startIco">
-							<img src="./img/book/xing.png" alt="" class="startIco">
-							<img src="./img/book/xing.png" alt="" class="startIco">
-							<img src="./img/book/xing.png" alt="" class="startIco">
-						</div>
-					</div>
-					<div class="introduction">书评</div>
-					<div class="viewAll">查看全部书评</div>
+			<div class="tagList">
+				<div class="tgaItem">
+					<a href="/" class="nuxt-link-active">首页</a>
 				</div>
+				<div>&nbsp;=>&nbsp;</div>
+				<div class="tgaItem">图书详情&nbsp;=>&nbsp;</div>
+				<div id="title"></div>
+			</div>
+			<div class="bookCover">
+				<img src="" alt="" class="bookImg">
+			</div>
+			<ul class="bookContent">
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+				<li class="copyrightTextTow"></li>
+			</ul>
+			<div class="introduction">图书简介：
+				<h2 class="introductionText"></h2>
 			</div>
 		</div>
+		<div class="introduction">评分</div>
+		<div class="scoreContainer">
+			<div class="scoreNum">5.0分</div>
+			<div class="scoreStart">
+				<img src="./img/book/xing.png" alt="" class="startIco">
+				<img src="./img/book/xing.png" alt="" class="startIco">
+				<img src="./img/book/xing.png" alt="" class="startIco">
+				<img src="./img/book/xing.png" alt="" class="startIco">
+				<img src="./img/book/xing.png" alt="" class="startIco">
+			</div>
+		</div>
+		<div class="introduction">书评</div>
+		<div class="viewAll">查看全部书评</div>
 	</div>
+
 </section>
 <!-- 内容部分 -->
 <!-- footer -->
@@ -152,9 +123,9 @@
 	</div>
 	<div class="footerTitle"></div>
 </footer>
-</body>
 
 <script>
+
     let idArray = window.location.search.split('=');
     let bid = idArray[1];   // 获取路由id
 
@@ -169,19 +140,18 @@
             let json = JSON.parse(xhr.responseText);
             let data = json.data
             let time = formatDate(data[0].ddate)
-            it[0].innerHTML = data[0].btitle
-            it[1].innerHTML = data[0].dauthor
-            it[2].innerHTML = data[0].dcrt
-            it[3].innerHTML = data[0].dISBN
-            it[4].innerHTML = data[0].dnumber
-            it[5].innerHTML = data[0].dpbh
-            it[6].innerHTML = data[0].dunit
-            it[7].innerHTML = data[0].dbatch
-            it[8].innerHTML = time
-            document.getElementById('title').innerText = data[0].btitle
-            document.getElementsByClassName("introductionText")[0].innerHTML = data[0].ditd
-            // document.getElementsByClassName("bookImg")[0].style.background =  `url('${data[0].bimg}') no-repeat`
+            title.innerHTML = data[0].btitle
+            it[0].innerHTML = "书名： " + data[0].btitle
+            it[1].innerHTML = "作者： " + data[0].dauthor
+            it[2].innerHTML = "出版社： " + data[0].dcrt
+            it[3].innerHTML = "ISBN： " + data[0].dISBN
+            it[4].innerHTML = "电子出版物发行数量： " + data[0].dnumber
+            it[5].innerHTML = "版权持有： " + data[0].dpbh
+            it[6].innerHTML = "电子出版物发行单位： " + data[0].dunit
+            it[7].innerHTML = "电子出版物发行批次： " + data[0].dbatch
+            it[8].innerHTML = "电子出版物发行时间： " + time
             document.getElementsByClassName('bookImg')[0].src = `${data[0].bimg}`
+            document.getElementsByClassName('introductionText')[0].innerHTML = data[0].ditd
         }
         xhr.send()
     }
@@ -201,5 +171,5 @@
     }
 
 </script>
-
+</body>
 </html>

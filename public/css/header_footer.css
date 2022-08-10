@@ -28,8 +28,9 @@ body,dd,dl,dt,li,ol,p,ul {
 }
 
 .logoIco{
-    height: 30px;
+    height: 60px;
     cursor: pointer;
+    width: 260px
 }
 
 .rightContainer{

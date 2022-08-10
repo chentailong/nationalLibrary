@@ -1,0 +1,93 @@
+
+#login_personal{
+    width: 100%;
+    background-color: #ddd;
+    padding: 20px 0;
+
+
+}
+.fillings{
+    height: 60px;
+}
+.person_nei{
+    width: 970px;
+    margin: 0 auto;
+    height: 550px;
+}
+.personal_modify{
+    width: 300px;
+    /*height: 200px;*/
+    background-color: #fff !important;
+    margin-top: 90px;
+    position: relative;
+    text-align: center;
+    padding: 90px 0;
+    float: left;
+
+}
+.personal_modify img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.personal_modify p{
+    font-size: 18px;
+    font-weight: 560;
+}
+.personal_modify ul{
+    margin-top: 20px;
+}
+.personal_modify ul>li{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.personal_modify ul>li>a{
+    color: #000;
+}
+.personal_one{
+    background-color: #3aaa75;
+}
+.personal_pwd{
+    width: 500px;
+    float: left;
+    height: 424px;
+    background-color: #fff;
+    margin-top: 92px;
+    margin-left: 30px;
+}
+.personal_pwd>p:nth-child(1){
+    color: #999;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.personal_pwd .form{
+    text-align: center;
+    margin-top: 60px;
+}
+.personal_pwd .form>p{
+    font-size: 16px;
+    margin: 20px 0;
+}
+.personal_pwd input{
+    width: 200px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    padding-left: 5px;
+    
+}
+.personal_pwd input:nth-child(4){
+    border: none;
+    background-color: #3aaa75;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    width: 280px;
+}
+
