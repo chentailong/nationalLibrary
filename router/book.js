@@ -38,7 +38,7 @@ router.get('/bookCl', (req, res) => {
 //查询十条图书，用于首页显示
 //http://127.0.0.1:9000/library/book/indexBook
 router.get('/indexBook', (req, res) => {
-    let sql = 'SELECT * FROM l_book LIMIT 10'
+    let sql = 'SELECT * FROM l_book LIMIT 10'//查数据表前10条数据
     pool.query(sql, (error, result) => {
         if (error) throw error
         if (result) {
@@ -64,6 +64,8 @@ router.get('/bookId', (req, res) => {
         }
     })
 })
+
+//添加收藏
 
 //获取随机推荐图书
 //get /randomBook

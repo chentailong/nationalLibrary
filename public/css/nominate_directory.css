@@ -1,0 +1,90 @@
+section {
+    width: 970px;
+    margin: 0 auto !important;
+    margin-top: 80px !important;
+}
+
+/* 右下角浮动样式 */
+.back_top,
+.check_directory,
+.collect {
+    background-color: #3aaa75;
+    text-align: center;
+    padding-top: 6px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    position: fixed;
+}
+
+.back_top {
+    left: 90%;
+    top: 80%;
+}
+
+.check_directory {
+    left: 90%;
+    top: 70%;
+}
+
+.collect {
+    left: 90%;
+    top: 60%;
+}
+
+.back_top>a,
+.check_directory>a,
+.collect>a {
+    color: black;
+}
+
+.back_top>a:hover,
+.check_directory>a:hover,
+.collect>a:hover {
+    color: white;
+}
+
+/* 目录部分 */
+.content_left {
+    width: 25%;
+    float: left;
+     position:fixed;
+}
+
+/* 书籍封面 */
+.book_cover {
+    float: left;
+}
+
+.book_content>ul>li {
+    margin: 25px 0;
+}
+
+.book_cover img {
+    width: 144px;
+    height: 216px;
+    margin-right: 19px;
+}
+
+.content_left>ul>li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.content_left>ul>li:hover {
+    color: #3aaa75;
+}
+
+/* 内容部分 */
+.content_right {
+    width: 70%;
+    float: right;
+    background-color: #3aaa7654;
+    margin-bottom: 30px;
+}
+
+.content_right>p {
+    padding: 0 5%;
+    line-height: 30px;
+    text-indent: 2em;
+}

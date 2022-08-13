@@ -41,7 +41,7 @@
     }
 
     //检测用户是否存在
-    uname.onblur = function fun() {
+    uname.onblur = function () {
         //获取用户的输入名
         var name = uname.value
         var url = '/library/user/check_name?uname=' + name
@@ -52,6 +52,7 @@
         xhr.open('GET', url)
         //3.提前准备响应消息后的操作
         xhr.onload = function () {
+            console.log(xhr.responseText)
             if (xhr.responseText === 'exists') {
                 unameMsg.innerHTML = "该用户已存在"
                 document.getElementById('unameMsg').style.display = 'block'
@@ -63,21 +64,42 @@
         xhr.send()
     }
 
+    upwd1.onblur = function () {
+        var format = upwd1.value
+        var url = '/library/user/check_format?formats=' + format
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', url)
+        xhr.onload = function () {
+            if (xhr.responseText === '正确格式为数字加字母，长度为6-16位') {
+                pwdMsg.innerHTML = xhr.responseText
+                document.getElementById('pwdMsg').style.display = 'block'
+            } else {
+                document.getElementById('pwdMsg').style.display = 'none'
+            }
+            //4.给服务器发送请求
+        }
+        xhr.send()
+    }
+
+    upwd2.onblur = function () {
+        let upwd1 = document.getElementById('upwd1').value
+        let upwd2 = document.getElementById('upwd2').value
+        if (upwd2 !== upwd1) {
+            pwd2Msg.innerHTML = '密码不一致,请重新输入'
+        } else {
+            document.getElementById('pwd2Msg').style.display = 'none'
+        }
+    }
+
+
     function show() {
-        let name = document.getElementById("uname").value;
-        let upwd1 = document.getElementById("upwd1").value;
-        let upwd2 = document.getElementById("upwd2").value;
-        let email = document.getElementById("email").value;
+        let upwd1 = document.getElementById('upwd1').value
+        let email = document.getElementById('email').value
+	    let name = document.getElementById("uname").value
         if (check === false) {
             alert("请先勾选服务协议")
-        } else if (name === '' || name.length < 6) {
-            alert("账号格式错误")
-        } else if (upwd1 === '' || upwd1.length < 6 || upwd1.length > 18) {
-            alert('密码格式错误')
-        } else if (upwd2 !== upwd1) {
-            alert('密码不一致')
         } else if (email === '') {
-            alert("请先输入邮箱")
+            emailMsg.innerHTML = '请先输入邮箱'
         } else {
             let url = "/library/user/reg?uname=" + name + "&upwd=" + upwd1 + "&email=" + email
             let xhr = new XMLHttpRequest()

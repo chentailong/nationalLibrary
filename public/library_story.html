@@ -10,32 +10,11 @@
 	<link rel="stylesheet" href="./css/header_footer.css">
 	<link rel="stylesheet" href="css/library_story.css">
 	<script src="./js/cookie.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
-<nav>
-	<div class="content">
-		<div class="titleLogo">
-			<img src="img/index/logo.jpg" class="logoIco">
-		</div>
-		<div class="rightContainer">
-			<ul class="fl clearfix">
-				<li><a href="index.html" title="藏书馆"> 首页 </a></li>
-				<li><a href="library_story.html" title="图书馆故事"> 图书馆故事 </a></li>
-				<li><a href="nominate.html" title="最美图书馆"> 推荐图书 </a></li>
-				<li><a href="news.html" title="新闻推荐"> 文章推荐 </a></li>
-				<li><a href="book_class.html" title="图书分类"> 图书分类 </a></li>
-			</ul>
-			<div class="login_reg" id="login_reg">
-				<a href="login.html">登录</a> | <a href="register.html">注册</a>
-			</div>
-			<a href="" id="personal"><span id="cUser"></span></a>
-		</div>
-	</div>
-</nav>
-<!-- 导航部分 -->
-<!-- 内容部分 -->
-
+<div id="head"></div>
 <div id="content">
 	<div class="nav_title">
 		<p><a href="index.html">首页</a> &nbsp; / &nbsp;<span>图书馆故事</span></p>
@@ -110,49 +89,15 @@
 	</div>
 </div>
 
-<!-- 内容部分结束 --><!-- footer -->
-<footer class="footerContainer">
-	<div class="footerContent">
-		<div class="footerLeft">
-			<div class="lineText">
-				联系我们
-				<span style="font-size: 16px;margin-left: 9px">Contact</span>
-			</div>
-			<div class="textItem" style="margin-bottom: 47px">
-				如您有任何疑问，请通过如下方式联系我们
-			</div>
-			<div class="textItem">
-				邮箱：88888888@126.com
-			</div>
-			<div class="textItem">
-				电话：8888- 88888888
-			</div>
-			<div class="textItem" style="margin-bottom: 45px">
-				客服QQ：88888888
-			</div>
-			<div class="textItem">
-				Copyright © www.zhonguolibrary.com, All Rights Reserved. 拥有主宰自己的力量
-			</div>
-		</div>
-		<div class="footerRight">
-			<div class="companyTitle">
-				关注微信公众号
-			</div>
-			<div class="textItem">
-				获取最新分享内容
-			</div>
-			<img src="img/index/Code.jpg" class="codeIco">
-			<div class="scanText">
-				微信扫一扫关注
-			</div>
-			<div class="scanText">
-				或搜索关注
-				<span style="color: #D67C5A">中国图书馆官方</span>
-			</div>
-		</div>
-	</div>
-	<div class="footerTitle"></div>
-</footer>
+<iframe width="100%" height="400px" src="footer.html" scrolling="no" frameborder="0"></iframe>
+
+<script type="text/javascript">
+    //在js中引入
+    $(document).ready(function () {
+        $('#head').load('header.html');
+    });
+
+</script>
 
 </body>
 

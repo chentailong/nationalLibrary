@@ -20,7 +20,6 @@
     color: #64667b;
     font-size: 16px;
     cursor: pointer;
-    /* border-bottom: 1px solid #ddd; */
 }
 
 .render, .render > a {
@@ -36,12 +35,11 @@
 
 .book_list {
 
-    margin-top: 10px;
 }
 
 .book_product {
     width: 120px;
-    padding: 10px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -102,7 +100,7 @@
 }
 
 .nav_title a, span {
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 
 .nav_title span {

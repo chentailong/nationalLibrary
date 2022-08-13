@@ -1,20 +1,28 @@
-
-#login_personal{
-    width: 100%;
-    background-color: #ddd;
-    padding: 20px 0;
-
-
+body {
+    background-size: 100% 100% !important;
+    background: url(../img/index/login_bg.png) no-repeat fixed;
 }
-.fillings{
+
+html {
+    background: none !important;
+}
+
+#login_personal {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.fillings {
     height: 60px;
 }
-.person_nei{
+
+.person_nei {
     width: 970px;
     margin: 0 auto;
     height: 550px;
 }
-.personal_modify{
+
+.personal_modify {
     width: 300px;
     /*height: 200px;*/
     background-color: #fff !important;
@@ -25,7 +33,8 @@
     float: left;
 
 }
-.personal_modify img{
+
+.personal_modify img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -34,55 +43,68 @@
     left: 50%;
     transform: translateX(-50%);
 }
-.personal_modify p{
+
+.personal_modify p {
     font-size: 18px;
     font-weight: 560;
 }
-.personal_modify ul{
+
+.personal_modify ul {
     margin-top: 20px;
 }
-.personal_modify ul>li{
+
+.personal_modify ul > li {
     width: 100%;
     height: 40px;
     line-height: 40px;
 }
-.personal_modify ul>li>a{
+
+.personal_modify ul > li > a {
     color: #000;
 }
-.personal_one{
-    background-color: #3aaa75;
-}
-.personal_pwd{
+
+.personal_pwd {
     width: 500px;
     float: left;
-    height: 424px;
+    height: 422px;
     background-color: #fff;
     margin-top: 92px;
     margin-left: 30px;
 }
-.personal_pwd>p:nth-child(1){
+
+.personal_pwd > p:nth-child(1) {
     color: #999;
     font-size: 18px;
     margin-top: 20px;
     margin-left: 20px;
 }
-.personal_pwd .form{
-    text-align: center;
+
+.personal_pwd .form {
+    /* text-align: center; */
+    margin-left: 20%;
     margin-top: 60px;
 }
-.personal_pwd .form>p{
+
+.personal_pwd .form > p {
     font-size: 16px;
     margin: 20px 0;
 }
-.personal_pwd input{
+
+.personal_pwd .form > p > span {
+    color: red;
+    padding-left: 3px;
+}
+
+.personal_pwd input {
     width: 200px;
     height: 30px;
     border-radius: 4px;
     border: 1px solid #000;
     padding-left: 5px;
-    
+
 }
-.personal_pwd input:nth-child(4){
+
+.personal_pwd input:nth-child(4) {
     border: none;
     background-color: #3aaa75;
     color: #fff;
@@ -91,3 +113,38 @@
     width: 280px;
 }
 
+.b2 .form {
+    margin-top: 20px;
+}
+
+.b2 input {
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0%;
+}
+
+.b2 input:last-child {
+    border: none;
+    background-color: #3aaa75;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    width: 280px;
+    border-radius: 4px;
+}
+
+.block2 {
+    display: none;
+}
+
+.block2:target {
+    display: block;
+}
+
+.personal_one:hover {
+    background-color: #3aaa75;
+}
+
+.personal_one:hover a {
+    color: #fff;
+}
